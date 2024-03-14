@@ -7,3 +7,9 @@
   - Warning
   - Information
   - Question
+
+# create the iconic style of digital gates that used for the simualtions
+
+![And Output Image](img/output_and.png)
+![or Output Image](img/output_or.png)
+![Xor Output Image](img/output_xor.png)
