@@ -45,8 +45,16 @@ class Ui_MainWindow(object):
         self.statusbar.setObjectName("statusbar")
         MainWindow.setStatusBar(self.statusbar)
 
+        # self.Cbox1.addItem("2")
+
+        # index = self.Cox1.findText("0", QtCore.Qt.MatchFixedString)
+
+        # self.Cbox1.setCurrentIndex(index)
+
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
+        
+        self.submit.clicked.connect(self.pressed)
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
@@ -57,6 +65,13 @@ class Ui_MainWindow(object):
         self.Cbox2.setItemText(1, _translate("MainWindow", "1"))
         self.submit.setText(_translate("MainWindow", "submit"))
         self.label.setText(_translate("MainWindow", "X XOR Y = "))
+
+    def pressed(self):
+        x = self.Cbox1.currentText()
+        y = self.Cbox2.currentText()
+        result = int(x)&int(y)
+        self.label.setText(f'X XOR Y = {result}')
+        self.label.adjustSize()
 
 
 if __name__ == "__main__":
